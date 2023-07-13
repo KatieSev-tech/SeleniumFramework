@@ -14,12 +14,12 @@ public class BaseTest {
     LoginPage loginPage;
 
     @BeforeMethod
-    public void SetUp () {
+    public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/katerynasevriukova/Documents/GitHub/SeleniumFramework/src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         ChromeDriver driver = new ChromeDriver(options);
-        homePage = new HomePage (driver);
+        homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
 
 
@@ -28,7 +28,7 @@ public class BaseTest {
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+            driver.close();
         }
     }
 }
