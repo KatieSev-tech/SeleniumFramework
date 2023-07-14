@@ -13,9 +13,9 @@ public class ArrayDropdownHomeWork extends BaseTest{
     @Test
 
     public void jobTitleDropdown () {
-        driver.get("https://test.my-fork.com/register");
+        homePage.openSignUpPage();
         WebElement jobTitleDropdownElement;
-        jobTitleDropdownElement = driver.findElement(By.id("//select[@id='job-title']"));
+        jobTitleDropdownElement = driver.findElement(By.id("job-title"));
         Select jobTDropdownElement = new Select(jobTitleDropdownElement);
         List<WebElement> options = new ArrayList<>();
         options = jobTDropdownElement.getOptions();
