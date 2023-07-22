@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
         @Test
         public void signInPage(){
+
             homePage.openSignInPage();
         }
         @Test
@@ -14,6 +15,7 @@ import org.testng.annotations.Test;
 
             homePage.openSignInPage();
             loginPage.emailPasswordFieldsSignInButtonAreDisplayed();
+            loginPage.softAssertionsSignInPageFields();
 
         }
 
@@ -32,6 +34,7 @@ import org.testng.annotations.Test;
             loginPage.fillUpInvalidCredentials();
             loginPage.submitButtonCredentials();
             loginPage.displayErrorMessage();
+            loginPage.softAssertionsErrorMessageText();
         }
 
         @Test
@@ -45,14 +48,23 @@ import org.testng.annotations.Test;
         public void validateCheckBoxTextIsDisplayed () {
             homePage.openSignInPage();
             loginPage.checkBoxTextIsDisplayed();
+            loginPage.softAssertionsSignInPageRememberMeText();
         }
+
+
+        @Test
+        public void validateSignUplinkIsDisplayed (){
+            homePage.openSignInPage();
+            loginPage.SignUpLinkIsPresent();
+            loginPage.softAssertionsSignInPageSignUpLink();
+        }
+
         @Test
         public void validateValidEmailPasswordClickLoginButton () {
             homePage.openSignInPage();
             loginPage.fillUpCredentials();
             loginPage.submitButtonCredentials();
         }
-
 
 
     }

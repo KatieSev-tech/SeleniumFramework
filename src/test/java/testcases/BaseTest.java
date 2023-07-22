@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeMethod;
 import pageobjects.HomePage;
 import pageobjects.LoginPage;
 
+import java.time.Duration;
+
 public class BaseTest {
 
     public ChromeDriver driver;
@@ -18,10 +20,11 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", "/Users/katerynasevriukova/Documents/GitHub/SeleniumFramework/src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        ChromeDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
-
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
 
     }
 

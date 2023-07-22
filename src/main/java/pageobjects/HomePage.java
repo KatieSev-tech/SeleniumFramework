@@ -1,10 +1,13 @@
 package pageobjects;
 
+import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BaseMain{
+
+    BaseMain baseMain = new BaseMain(driver); // should provide value to avoid null error
 
     public HomePage(ChromeDriver driver){
         super(driver);
@@ -17,6 +20,7 @@ public class HomePage extends BaseMain{
     public void openSignInPage(){
 
         driver.get(myForkURL);
+        baseMain.hardAssertsOpenWebsite();
         driver.findElement(By.xpath(SignInButton)).click();
 
     }
