@@ -1,4 +1,4 @@
-package testcases;
+package testpracticum;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

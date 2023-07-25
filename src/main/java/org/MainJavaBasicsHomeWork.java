@@ -1,3 +1,5 @@
+package org;
+
 public class MainJavaBasicsHomeWork {
     public static void main(String[] args) {
 

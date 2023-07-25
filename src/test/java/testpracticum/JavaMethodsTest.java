@@ -1,3 +1,5 @@
+package testpracticum;
+
 import org.testng.annotations.Test;
 
 public class JavaMethodsTest {
